@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CombatRoutine</name>
+    </assembly>
+    <members>
+        <member name="M:CombatRoutine.KeyHelper.Send(Common.Define.HotKey.Keys)">
+            <summary>
+            Send a virtual key.
+            </summary>
+            <param name="key">Key to send.</param>
+        </member>
+        <member name="M:CombatRoutine.KeyHelper.Send(Common.Define.HotKey.Keys,System.Collections.Generic.IEnumerable{Common.Define.HotKey.Keys})">
+            <summary>
+            Send a virtual key with modifiers.
+            </summary>
+            <param name="key">Key to send.</param>
+            <param name="mods">Modifiers to press.</param>
+        </member>
+        <member name="M:CombatRoutine.PartyHelper.GetAnotherTank(Common.Define.CharacterAgent)">
+            <summary>
+            当队伍内仅存在两个T时，返回作为参数的另外一个T
+            </summary>
+            <param name="tank1"></param>
+            <returns>如果T的数量并非两个的时候则返回null</returns>
+        </member>
+        <member name="M:CombatRoutine.TargetHelper.GetTargetDistanceTest(Common.Define.CharacterAgent,Common.Define.CharacterAgent)">
+            <summary>
+            </summary>
+            <param name="targetRange"> 目标和自己的距离</param>
+            <param name="damageRange"> 目标和他周围单位的距离</param>
+            <returns></returns>
+        </member>
+        <member name="P:CombatRoutine.BattleData.LimitAbility">
+            <summary>
+            限制后就只能使用1个了
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.BattleData.SetSequence(CombatRoutine.ISlotSequence)">
+            <summary>
+            设置接下来的技能队列
+            </summary>
+            <param name="slotSequence"></param>
+        </member>
+        <member name="T:CombatRoutine.CountDownHandler">
+            <summary>
+                倒计时管理,主要对外提供AddAction方法
+            </summary>
+            <seealso cref="M:CombatRoutine.CountDownHandler.AddAction(System.Int32,System.UInt32,Common.Define.SpellTargetType)" />
+        </member>
+        <member name="M:CombatRoutine.CountDownHandler.AddAction(System.Int32,System.UInt32,Common.Define.SpellTargetType)">
+            <summary>
+                添加倒计时行为
+            </summary>
+            <param name="timeLeft">倒计时还剩多少秒</param>
+            <param name="spellId">具体的技能Id</param>
+            <param name="spellTargetType">技能的目标类型,默认自己</param>
+        </member>
+        <member name="M:CombatRoutine.CountDownHandler.AddPotionAction(System.Int32)">
+            <summary>
+            使用爆发药
+            </summary>
+            <param name="timeleft"></param>
+        </member>
+        <member name="P:CombatRoutine.MultiMap`2.Item(`0)">
+            <summary>
+                返回内部的list
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.MultiMap`2.GetAll(`0)">
+            <summary>
+                不返回内部的list,copy一份出来
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Opener.IOpener.InitCountDown(CombatRoutine.CountDownHandler)">
+            <summary>
+                初始化CountDown期间的行为,为了应对黑魔那种不同起手之间倒计时处理不一样的情况
+                <seealso cref="T:CombatRoutine.CountDownHandler" />
+            </summary>
+        </member>
+        <member name="T:CombatRoutine.PlayerOptions">
+            <summary>
+                玩家可以在UI上控制的一些Toggle
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.PlayerOptions.AOE">
+            <summary>
+                是否允许使用AOE
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.PlayerOptions.Burst">
+            <summary>
+                是否允许爆发
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.PlayerOptions.DOT">
+            <summary>
+                是否允许使用Dot
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.PlayerOptions.FinalBurst">
+            <summary>
+                是否是最终爆发(倾泻资源)
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.PlayerOptions.Stop">
+            <summary>
+                是否停手
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.PlayerOptions.Reset">
+            <summary>
+                重置PlayerOptions中的数据
+            </summary>
+        </member>
+        <member name="T:CombatRoutine.ISlotSequence">
+            <summary>
+                固定的Slot队列,每次使用时都会创建一个新的
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.ISlotSequence.Sequence">
+            <summary>
+                构建的Slot队列
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.ISlotSequence.CompeltedAction">
+            <summary>
+            完成后的回调,内部用
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.ISlotSequence.StartCheck">
+            <summary>
+                Sequence运行前,返回值大于等于0说明可以用,反之不可以
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.ISlotSequence.StopCheck(System.Int32)">
+            <summary>
+                Sequence运行中,返回值大于等于0说明可以中断
+            </summary>
+            <returns></returns>
+            <param name="index">执行到哪一步了</param>
+        </member>
+        <member name="T:CombatRoutine.SlotMode">
+            <summary>
+            Slot的执行模式,决定着这个Slot从哪个队列作为入口
+            <see cref="F:CombatRoutine.SlotMode.Gcd"/>
+            <see cref="F:CombatRoutine.SlotMode.OffGcd"/>
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotMode.Gcd">
+            <summary>
+            进入GCD队列执行,会在满足CanUseGCD的情况下进行检测
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotMode.OffGcd">
+            <summary>
+            进入能力技能的队列执行,会在不满足CanUseGcd的情况下进行检测
+            </summary>
+        </member>
+        <member name="T:CombatRoutine.ISlotResolver">
+            <summary>
+                针对当前要使用什么技能的求解器
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.ISlotResolver.SlotMode">
+            <summary>
+            Slot的执行模式,决定着这个Slot从哪个队列作为入口
+            入口之后的执行行为完全由Slot自身控制,直到它的技能全部释放完毕
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.ISlotResolver.Check">
+            <summary>
+                返回大于等于0说明这个求解器被命中了
+                接下来就是调用Build方法构建想要使用的Slot了
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.ISlotResolver.Build(CombatRoutine.Slot)">
+            <summary>
+                构建当前要使用的Slot
+                <seealso cref="T:CombatRoutine.Slot" />
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CombatRoutine.Slot">
+            <summary>
+                通用的Slot,决定接下来一段时间内连续释放的一批技能
+                可以是Gcd+能力技
+                可以是能力技+gcd
+                也可以是单个技能
+                还可以是一连串的组合
+                <seealso cref="M:CombatRoutine.Slot.Add(CombatRoutine.SlotAction)" />
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.Slot.Add(Common.Define.Spell)">
+            <summary>
+                追加一个Spell到队列中
+            </summary>
+            <param name="spell"></param>
+        </member>
+        <member name="M:CombatRoutine.Slot.Add2NdWindowAbility(Common.Define.Spell)">
+            <summary>
+                添加一个在后半GCD才使用的能力技
+            </summary>
+            <param name="spell"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Slot.AddDelaySpell(System.Int32,Common.Define.Spell)">
+            <summary>
+                添加一个延迟一定时间释放的技能
+            </summary>
+            <param name="delay"></param>
+            <param name="spell"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Slot.AppendSequence(CombatRoutine.ISlotSequence,System.Boolean)">
+            <summary>
+            应该是最后一个设置的
+            </summary>
+            <param name="slotSequence"></param>
+            <param name="wait2nextGcd"></param>
+        </member>
+        <member name="T:CombatRoutine.SlotAction">
+            <summary>
+                代表一个想要执行的行为
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotAction.WaitType.None">
+            <summary>
+                不等待,立即使用
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotAction.WaitType.WaitInMs">
+            <summary>
+                等待一定时间
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotAction.WaitType.WaitForSndHalfWindow">
+            <summary>
+                等待后半GCD窗口
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.SlotAction.MaxDuration">
+            <summary>
+                Spell使用失败时,最多尝试多久
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.SlotAction.#ctor(CombatRoutine.SlotAction.WaitType,System.Int32,Common.Define.Spell)">
+            <summary>
+                完全的控制
+            </summary>
+            <param name="wait">等待一定时间</param>
+            <param name="time">如果是WaitType.WaitInMs,这里就是具体的ms值</param>
+            <param name="spell"></param>
+        </member>
+        <member name="M:CombatRoutine.SlotAction.#ctor(Common.Define.Spell)">
+            <summary>
+                立即使用一个Spell
+            </summary>
+            <param name="spell"></param>
+        </member>
+        <member name="P:CombatRoutine.IRotationEntry.AuthorName">
+            <summary>
+                你的名字,长度必须>=2
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.IRotationEntry.TargetJob">
+            <summary>
+                针对的是哪个Job
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationEntry.Build(System.String)">
+            <summary>
+                创建Rotation的入口,只会被调用一次
+            </summary>
+            <returns>插件的核心 <seealso cref="T:CombatRoutine.Rotation" /></returns>
+            <param name="settingFolder">
+                配置文件的存放目录,包含你的代码存放的文件夹的名字
+                推荐配置文件采用<see cref="!:SystemJsonHelper" />来序列化
+            </param>
+        </member>
+        <member name="M:CombatRoutine.IRotationEntry.OnLanguageChanged(Common.Language.LanguageType)">
+            <summary>
+            语言切换时的处理,推荐语言的配置文件使用TomlHelper来处理,比json更方便
+            </summary>
+            <param name="languageType"></param>
+        </member>
+        <member name="T:CombatRoutine.IRotationEventHandler">
+            <summary>
+                常用的事件回调处理
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnResetBattle">
+            <summary>
+            调用重置战斗数据
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnPreCombat">
+            <summary>
+                战斗之前的处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnNoTarget">
+            <summary>
+                没有目标时的处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.AfterSpell(CombatRoutine.Slot,Common.Define.Spell)">
+            <summary>
+                某个技能使用之后的处理,比如诗人在刷Dot之后记录这次是否是强化buff的Dot
+            </summary>
+            <param name="slot">这个技能归属的Slot</param>
+            <param name="spell">某个使用完的技能</param>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnBattleUpdate(System.Int32)">
+            <summary>
+                战斗中每帧都会触发的逻辑
+            </summary>
+            <param name="currTime">从战斗开始到现在的时间,单位秒(s)</param>
+        </member>
+        <member name="T:CombatRoutine.IRotationUI">
+            <summary>
+                如果想要在框架提供的UI位置上显示你的专属UI,就实现这个接口
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.IRotationUI.OverlayTitle">
+            <summary>
+            窗体上显示的名字,尽量保证这个字符串是静态的
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationUI.DrawOverlay">
+            <summary>
+                使用Imgui绘画悬浮窗,已经使用Imgui.Begin/End包装了一层
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.ITargetResolver.ResolveTarget(Common.Define.CharacterAgent@)">
+            <summary>
+                尝试主动选择目标(进入战斗后生效)
+            </summary>
+            <param name="agent"></param>
+            <returns>如果当前决定切换目标,返回true,否则永远返回false</returns>
+        </member>
+        <member name="T:CombatRoutine.ITriggerHandler">
+            <summary>
+                自定义的触发器处理类,用来处理特定情况下的行为
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.ITriggerHandler.ListeningActionName">
+            <summary>
+                监听的自定义行为的ActionName
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.ITriggerHandler.Handle(System.String)">
+            <summary>
+                在TriggerLine编辑器中编辑的自定义行为(CustomTrigger)
+            </summary>
+            <param name="args">参数</param>
+        </member>
+        <member name="T:CombatRoutine.Rotation">
+            <summary>
+                每个输出的核心类,代表着对应作者对这个输出插件的一切控制.
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.Rotation.#ctor(CombatRoutine.IRotationEntry,System.Func{System.Collections.Generic.List{CombatRoutine.ISlotResolver}})">
+            <summary>
+            </summary>
+            <param name="rotationEntry">插件的基本信息</param>
+            <param name="slotResolvers">
+                每一个ISlotResolver都是一个Slot的求解器 (Slot: 决定接下来要释放什么技能)
+                SlotResolver的SlotMode决定它在哪个队列被计算
+                传入的SlotResolvers将按照传入的顺序遍历求解(GCD队列,OffGcd队列,None队列会分开判断)
+                <seealso cref="T:CombatRoutine.ISlotResolver" />
+            </param>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddOpener(System.Func{System.UInt32,CombatRoutine.Opener.IOpener})">
+            <summary>
+            起手,包含倒计时的处理
+            </summary>
+            <param name="opener">参数是角色等级</param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.SetRotationEventHandler(CombatRoutine.IRotationEventHandler)">
+            <summary>
+                添加一些事件回调
+            </summary>
+            <param name="rotationEventHandler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddTargetResolver(CombatRoutine.ITargetResolver[])">
+            <summary>
+                追加TargetResolver,可以添加多个
+            </summary>
+            <param name="targetResolver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddHotkeyEventHandlers(CombatRoutine.Hotkey.IHotkeyEventHandler[])">
+            <summary>
+                提供一些快捷键事件的处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddSlotSequences(CombatRoutine.ISlotSequence[])">
+            <summary>
+                一共提供多少个固定的技能轴,比如战斗中固定的爆发轴/资源连击轴
+                每个轴都带进入条件和跳出条件
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddSettingUIs(CombatRoutine.View.ISettingUI[])">
+            <summary>
+            添加设置界面
+            </summary>
+            <param name="settingUis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddTriggerCondition(CombatRoutine.TriggerModel.ITriggerCond[])">
+            <summary>
+            添加触发器条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.Rotation.AddTriggerAction(CombatRoutine.TriggerModel.ITriggerAction[])">
+            <summary>
+            添加触发器行为
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:CombatRoutine.Setting.GeneralSettings.InputSimulate">
+            <summary>
+            模拟键盘按键输入
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.Setting.PotionSetting.GetPotionData(Common.Define.Jobs)">
+            <summary>
+                根据职业获取爆发药列表
+            </summary>
+            <param name="job"></param>
+            <param name="potionDatas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.View.MeleePosHelper.Draw(CombatRoutine.View.MeleePosHelper.Pos,System.Int32)">
+            <summary>
+            设置近战身位指示器如何显示
+            </summary>
+            <param name="dir"></param>
+            <param name="progress">0~100</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="F:CombatRoutine.View.ViewSettingManager.AllSettings">
+            <summary>
+            所有继承ISettingUI的类
+            </summary>
+        </member>
+        <member name="F:CombatRoutine.View.ViewSettingManager.Category2Childs">
+            <summary>
+            储存作者和SettingUI的名字
+            </summary>
+        </member>
+    </members>
+</doc>
