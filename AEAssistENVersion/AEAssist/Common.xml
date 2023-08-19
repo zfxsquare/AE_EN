@@ -190,6 +190,53 @@
         <member name="M:Common.Helper.ChatHelp.Print.NPCDialogue(System.String)">
             NPC说话频道
         </member>
+        <member name="M:Common.Helper.ChatHelper.SendMessage(System.String)">
+            发送宏指令
+        </member>
+        <member name="T:Common.Helper.ChatHelper.Print">
+            <summary>
+            本地打印纯文本，别人看不到，也没有声音
+            </summary>
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Say(System.String)">
+            说话频道 /s
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Shout(System.String)">
+            喊话频道 /sh
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Yell(System.String)">
+            呼喊频道 /y
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.PvPTeam(System.String)">
+            战队频道 /pt
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Echo(System.String)">
+            默语频道 /e
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Party(System.String)">
+            小队频道 /p
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Alliance(System.String)">
+            团队频道 /a
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.FreeCompany(System.String)">
+            部队频道 /fc
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.CustomEmote(System.String)">
+            自定义表情
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.StandardEmote(System.String)">
+            标准表情
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.Urgent(System.String)">
+            红字警告(淡红色)
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.ErrorMessage(System.String)">
+            红字报错(正红色)
+        </member>
+        <member name="M:Common.Helper.ChatHelper.Print.NPCDialogue(System.String)">
+            NPC说话频道
+        </member>
         <member name="M:Common.IMemApiBuff.GetAuraTimeleft(Common.Define.CharacterAgent,System.UInt32,System.Boolean)">
             <summary>
             获取buff剩余时间,毫秒
@@ -527,6 +574,20 @@
         </member>
         <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.NPCDialogue(System.String)">
             NPC说话频道
+        </member>
+        <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginMessage(System.String,System.String)">
+            <summary>
+            打印插件通知
+            </summary>
+            <param name="name"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginErrorMessage(System.String,System.String)">
+            <summary>
+            打印插件通知(红色错误类型)
+            </summary>
+            <param name="name"></param>
+            <param name="message"></param>
         </member>
     </members>
 </doc>
