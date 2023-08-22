@@ -300,12 +300,6 @@
             调用重置战斗数据
             </summary>
         </member>
-        <member name="M:CombatRoutine.IRotationEventHandler.OnPreCombat">
-            <summary>
-                战斗之前的处理
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:CombatRoutine.IRotationEventHandler.OnNoTarget">
             <summary>
                 没有目标时的处理
@@ -323,7 +317,7 @@
             <summary>
                 战斗中每帧都会触发的逻辑
             </summary>
-            <param name="currTime">从战斗开始到现在的时间,单位秒(s)</param>
+            <param name="currTime">从战斗开始到现在的时间,单位毫秒(ms)</param>
         </member>
         <member name="T:CombatRoutine.IRotationUI">
             <summary>
@@ -339,6 +333,12 @@
             <summary>
                 使用Imgui绘画悬浮窗,已经使用Imgui.Begin/End包装了一层
             </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationUI.DrawCustomOverlay">
+            <summary>
+            如果返回true,表示想自己从imgui.begin开始构建一个悬浮窗,上面的DrawOverlay就不再额外封装一个imgui.begin了.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:CombatRoutine.ITargetResolver.ResolveTarget(Common.Define.CharacterAgent@)">
             <summary>

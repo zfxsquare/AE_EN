@@ -237,6 +237,32 @@
         <member name="M:Common.Helper.ChatHelper.Print.NPCDialogue(System.String)">
             NPC说话频道
         </member>
+        <member name="M:Common.Helper.LogHelper.Print(System.String)">
+            <summary>
+            日志和聊天框打印
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Common.Helper.LogHelper.Print(System.String,System.String)">
+            <summary>
+            日志和聊天框打印
+            </summary>
+            <param name="title"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Common.Helper.LogHelper.PrintError(System.String)">
+            <summary>
+            日志和聊天框打印（错误类型）
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Common.Helper.LogHelper.PrintError(System.String,System.String)">
+            <summary>
+            日志和聊天框打印（错误类型）
+            </summary>
+            <param name="title"></param>
+            <param name="msg"></param>
+        </member>
         <member name="M:Common.IMemApiBuff.GetAuraTimeleft(Common.Define.CharacterAgent,System.UInt32,System.Boolean)">
             <summary>
             获取buff剩余时间,毫秒
@@ -575,18 +601,30 @@
         <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.NPCDialogue(System.String)">
             NPC说话频道
         </member>
+        <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginMessage(System.String)">
+            <summary>
+            打印插件通知
+            </summary>
+            <param name="message"></param>
+        </member>
         <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginMessage(System.String,System.String)">
             <summary>
             打印插件通知
             </summary>
-            <param name="name"></param>
+            <param name="title"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginErrorMessage(System.String)">
+            <summary>
+            打印插件通知(红色错误类型)
+            </summary>
             <param name="message"></param>
         </member>
         <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.PrintPluginErrorMessage(System.String,System.String)">
             <summary>
             打印插件通知(红色错误类型)
             </summary>
-            <param name="name"></param>
+            <param name="title"></param>
             <param name="message"></param>
         </member>
     </members>
