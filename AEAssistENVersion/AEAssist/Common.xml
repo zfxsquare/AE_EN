@@ -143,53 +143,6 @@
         <member name="M:Common.GUI.ImGuiHelper.IsRightMouseClicked">
             右键点击
         </member>
-        <member name="M:Common.Helper.ChatHelp.SendMessage(System.String)">
-            发送宏指令
-        </member>
-        <member name="T:Common.Helper.ChatHelp.Print">
-            <summary>
-            本地打印纯文本，别人看不到，也没有声音
-            </summary>
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Say(System.String)">
-            说话频道 /s
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Shout(System.String)">
-            喊话频道 /sh
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Yell(System.String)">
-            呼喊频道 /y
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.PvPTeam(System.String)">
-            战队频道 /pt
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Echo(System.String)">
-            默语频道 /e
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Party(System.String)">
-            小队频道 /p
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Alliance(System.String)">
-            团队频道 /a
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.FreeCompany(System.String)">
-            部队频道 /fc
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.CustomEmote(System.String)">
-            自定义表情
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.StandardEmote(System.String)">
-            标准表情
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.Urgent(System.String)">
-            红字警告(淡红色)
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.ErrorMessage(System.String)">
-            红字报错(正红色)
-        </member>
-        <member name="M:Common.Helper.ChatHelp.Print.NPCDialogue(System.String)">
-            NPC说话频道
-        </member>
         <member name="M:Common.Helper.ChatHelper.SendMessage(System.String)">
             发送宏指令
         </member>
@@ -353,6 +306,27 @@
             当前LB充能数值
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Common.IMemApiNavigation.Goto(System.Numerics.Vector3,System.Numerics.Vector3,System.Int32,System.Boolean)">
+            <summary>
+            导航移动至
+            </summary>
+            <param name="start">起始坐标</param>
+            <param name="end">目的地坐标</param>
+            <param name="territoryId">目标地图id，当前地图使用 -1</param>
+            <param name="useMount">是否使用坐骑</param>
+        </member>
+        <member name="M:Common.IMemApiNavigation.TeleportTo(System.Int32)">
+            <summary>
+            传送至指定地图
+            </summary>
+        </member>
+        <member name="M:Common.IMemApiNavigation.MoveToPos(System.Numerics.Vector3,System.Int32)">
+            <summary>
+            角色移动到某个点
+            </summary>
+            <param name="pos"></param>
+            <param name="timeout">超时默认10秒，如果单次移动点比较远，适当延长时间</param>
         </member>
         <member name="T:Common.IMemApiSpell">
             <summary>
