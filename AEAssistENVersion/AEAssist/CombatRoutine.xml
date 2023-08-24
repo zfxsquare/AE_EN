@@ -452,6 +452,37 @@
             <param name="progress">0~100</param>
             <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
+        <member name="M:CombatRoutine.View.OverlayHelper.DrawPotion(System.Boolean)">
+            <summary>
+            爆发药
+            </summary>
+            <param name="isHorizontal"></param>
+        </member>
+        <member name="M:CombatRoutine.View.OverlayHelper.DrawLimitBreak(System.Boolean)">
+            <summary>
+            极限技
+            </summary>
+            <param name="isHorizontal"></param>
+        </member>
+        <member name="M:CombatRoutine.View.OverlayHelper.DrawSprint(System.Boolean)">
+            <summary>
+            冲刺
+            </summary>
+            <param name="isHorizontal"></param>
+        </member>
+        <member name="M:CombatRoutine.View.OverlayHelper.DrawActionIconButton(System.UInt32,System.Boolean,System.Boolean)">
+            <summary>
+            技能图标按钮
+            </summary>
+            <param name="ActionId"></param>
+            <param name="isHorizontal"></param>
+            <param name="isAdjust"></param>
+        </member>
+        <member name="M:CombatRoutine.View.OverlayHelper.DrawTriggerlineInfo">
+            <summary>
+            时间轴信息
+            </summary>
+        </member>
         <member name="F:CombatRoutine.View.ViewSettingManager.AllSettings">
             <summary>
             所有继承ISettingUI的类

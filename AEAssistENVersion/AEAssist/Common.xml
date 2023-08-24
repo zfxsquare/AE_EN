@@ -307,6 +307,23 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Common.IMemApiMaker.GetMarkerByObject(System.UInt32)">
+            <summary>
+            获取单位身上的标记
+            </summary>
+        </member>
+        <member name="M:Common.IMemApiMaker.GetCharacterByMarker(Common.Marker)">
+            <summary>
+            获取被标记的单位，如果没有人被标记的情况，会返回一个非游戏玩家的莫名其妙的实体
+            </summary>
+        </member>
+        <member name="M:Common.IMemApiMaker.WayMarker(Common.WayMark)">
+            <summary>
+            获取场地标点信息
+            </summary>
+            <param name="wayMarkIndex">标点类型</param>
+            <returns></returns>
+        </member>
         <member name="M:Common.IMemApiNavigation.Goto(System.Numerics.Vector3,System.Numerics.Vector3,System.Int32,System.Boolean)">
             <summary>
             导航移动至
