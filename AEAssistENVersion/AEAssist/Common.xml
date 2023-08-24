@@ -216,6 +216,43 @@
             <param name="title"></param>
             <param name="msg"></param>
         </member>
+        <member name="M:Common.IMemApiAddon.CheckAddon(System.String)">
+            <summary>
+            检测窗口是否存在
+            </summary>
+            <param name="addonName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.IMemApiAddon.WaitAddonUntil(System.String,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            一直等到指定窗口存在或消失，才继续往下执行，超时后返回false
+            （使用该函数前加上 await 关键字）
+            </summary>
+            <param name="addonName">窗口名称</param>
+            <param name="visible">是否可见</param>
+            <param name="timeout">超时限制 ms</param>
+            <param name="delay">固定延时，防止自动交互太快</param>
+        </member>
+        <member name="M:Common.IMemApiAddon.GetAddonValue(System.String,System.UInt32)">
+            <summary>
+            获取窗口上的信息
+            </summary>
+            <param name="addonName"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Common.IMemApiAddon.SetAddonClicked(System.String,System.Object[])">
+            <summary>
+            点击窗口上的按钮
+            </summary>
+            <param name="addonName"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Common.IMemApiAddon.InteractWithUnit(Common.Define.CharacterAgent)">
+            <summary>
+            与游戏内单位交互
+            </summary>
+        </member>
         <member name="M:Common.IMemApiBuff.GetAuraTimeleft(Common.Define.CharacterAgent,System.UInt32,System.Boolean)">
             <summary>
             获取buff剩余时间,毫秒
@@ -314,7 +351,7 @@
         </member>
         <member name="M:Common.IMemApiMaker.GetCharacterByMarker(Common.Marker)">
             <summary>
-            获取被标记的单位，如果没有人被标记的情况，会返回一个非游戏玩家的莫名其妙的实体
+            获取被标记的单位
             </summary>
         </member>
         <member name="M:Common.IMemApiMaker.WayMarker(Common.WayMark)">
