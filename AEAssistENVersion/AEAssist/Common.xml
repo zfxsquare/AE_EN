@@ -248,10 +248,22 @@
             <param name="addonName"></param>
             <param name="values"></param>
         </member>
-        <member name="M:Common.IMemApiAddon.InteractWithUnit(Common.Define.CharacterAgent)">
+        <member name="M:Common.IMemApiAddon.InteractWithUnit(System.UInt32)">
             <summary>
             与游戏内单位交互
             </summary>
+        </member>
+        <member name="M:Common.IMemApiAddon.InteractWithUnit(System.String)">
+            <summary>
+            与游戏内单位交互
+            </summary>
+            <param name="objectName">单位名字，如有重复找最近单位</param>
+        </member>
+        <member name="M:Common.IMemApiAddon.InteractWithUnit(System.String[])">
+            <summary>
+            与游戏内单位交互
+            </summary>
+            <param name="objectName">符合数组包含的单位名字，如有重复找最近单位</param>
         </member>
         <member name="M:Common.IMemApiBuff.GetAuraTimeleft(Common.Define.CharacterAgent,System.UInt32,System.Boolean)">
             <summary>
