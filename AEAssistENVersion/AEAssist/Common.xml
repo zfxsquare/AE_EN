@@ -216,6 +216,16 @@
             <param name="title"></param>
             <param name="msg"></param>
         </member>
+        <member name="M:Common.Helper.TimeHelper.UtcNow">
+            <summary>
+            世界标准时间戳
+            </summary>
+        </member>
+        <member name="M:Common.Helper.TimeHelper.GetDateTime(System.Int64)">
+            <summary>
+            从世界标准时间戳解析时间信息
+            </summary>
+        </member>
         <member name="M:Common.IMemApiAddon.CheckAddon(System.String)">
             <summary>
             检测窗口是否存在
