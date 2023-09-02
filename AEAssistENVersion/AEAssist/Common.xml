@@ -483,6 +483,13 @@
             <param name="actionId">技能id</param>
             <returns>返回的可能是位状态标记，但是还不确定。已知的返回值可能 566-超过距离</returns>
         </member>
+        <member name="M:Common.IMemApiSpell.IsLevelEnough(System.UInt32)">
+            <summary>
+            角色等级是否大于技能学习等级
+            </summary>
+            <param name="spellId"></param>
+            <returns></returns>
+        </member>
         <member name="T:Common.IMemApiSummoner">
             <summary>
             召唤量谱相关api

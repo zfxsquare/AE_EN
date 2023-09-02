@@ -24,6 +24,20 @@
             <param name="tank1"></param>
             <returns>如果T的数量并非两个的时候则返回null</returns>
         </member>
+        <member name="M:CombatRoutine.SpellHelper.IsReady(System.UInt32)">
+            <summary>
+            检查项目包括：IsUnlock、RecentlyUsed、Charges>= 1、IsLevelEnough
+            </summary>
+            <param name="spellId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.SpellHelper.IsReady(Common.Define.Spell)">
+            <summary>
+            检查项目包括：IsUnlock、RecentlyUsed、Charges>= 1、IsLevelEnough
+            </summary>
+            <param name="spellData"></param>
+            <returns></returns>
+        </member>
         <member name="M:CombatRoutine.TargetHelper.GetTargetDistanceTest(Common.Define.CharacterAgent,Common.Define.CharacterAgent)">
             <summary>
             </summary>
@@ -443,6 +457,15 @@
             <param name="job"></param>
             <param name="potionDatas"></param>
             <returns></returns>
+        </member>
+        <member name="M:CombatRoutine.TriggerModel.ITriggerlineCheck.Check(CombatRoutine.TriggerModel.TriggerCompBase,CombatRoutine.TriggerModel.TriggerNodeBase,CombatRoutine.TriggerModel.TriggerLine,CombatRoutine.TriggerModel.Env,CombatRoutine.TriggerModel.TriggerlineCheckResult)">
+            <summary>
+            
+            </summary>
+            <param name="currNode">这个对象当前在哪个节点里</param>
+            <param name="parent">所在节点的父节点</param>
+            <param name="env">检查时的一些临时数据,比如修改变量的行为可以检查Env里有没有那个变量,没有就说明前面没配设置变量的行为</param>
+            <param name="checkResult">检查结果,根据情况可以添加Warning,还是Error</param>
         </member>
         <member name="M:CombatRoutine.View.MeleePosHelper.Draw(CombatRoutine.View.MeleePosHelper.Pos,System.Int32)">
             <summary>
