@@ -140,6 +140,13 @@
             </summary>
             <param name="language"></param>
         </member>
+        <member name="M:Common.GUI.ImGuiHelper.Separator(System.UInt32,System.UInt32)">
+            <summary>
+            一个带上下间距的分割线
+            </summary>
+            <param name="topHeight">上间距</param>
+            <param name="bottomHeight">下间距</param>
+        </member>
         <member name="M:Common.GUI.ImGuiHelper.IsRightMouseClicked">
             右键点击
         </member>
@@ -498,6 +505,11 @@
         <member name="P:Common.IMemApiSummoner.TranceTimer">
             <summary>
             AttunmentTimerRemaining属性剩余时间
+            </summary>
+        </member>
+        <member name="P:Common.IMemApiSummoner.HasAetherflowStacks">
+            <summary>
+            是否有以太超流层数
             </summary>
         </member>
         <member name="P:Common.IMemApiSummoner.Aetherflow">
