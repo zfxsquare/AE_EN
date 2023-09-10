@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "TP/1.0.0": {
+      "RemoteControl/1.0.0": {
         "dependencies": {
           "CombatRoutine": "1.0.0",
           "Common": "1.0.0"
         },
         "runtime": {
-          "TP.dll": {}
+          "RemoteControl.dll": {}
         }
       },
       "Autofac/6.5.0": {
@@ -89,7 +89,7 @@
     }
   },
   "libraries": {
-    "TP/1.0.0": {
+    "RemoteControl/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -27,6 +27,11 @@
             按键抬起瞬间
             </summary>
         </member>
+        <member name="T:Common.Define.Map.ZoneLimit">
+            <summary>
+            单个区域限制类
+            </summary>
+        </member>
         <member name="T:Common.Define.SpellTargetType">
             <summary>
             技能目标代名词
@@ -197,6 +202,12 @@
         <member name="M:Common.Helper.ChatHelper.Print.NPCDialogue(System.String)">
             NPC说话频道
         </member>
+        <member name="M:Common.Helper.ChatHelper.Print.ColorText(System.Object[])">
+            <summary>
+            打印自定义彩色文本，如：ColorText("哈哈哈",69,"你好",22,"!")
+            </summary>
+            <param name="args">每个参数一段文本，文本参数后面跟int的颜色值参数，不带颜色默认白色</param>
+        </member>
         <member name="M:Common.Helper.LogHelper.Print(System.String)">
             <summary>
             日志和聊天框打印
@@ -281,6 +292,19 @@
             与游戏内单位交互
             </summary>
             <param name="objectName">符合数组包含的单位名字，如有重复找最近单位</param>
+        </member>
+        <member name="M:Common.IMemApiBlueMage.GetActiveSpells(System.Collections.Generic.List{System.UInt32},System.Int32)">
+            <summary>
+            返回当前激活的技能
+            </summary>
+            <param name="spells"></param>
+            <param name="maxCount"></param>
+        </member>
+        <member name="M:Common.IMemApiBlueMage.SetActiveSpells(System.Collections.Generic.List{System.UInt32})">
+            <summary>
+            设置一组技能
+            </summary>
+            <param name="spells"></param>
         </member>
         <member name="M:Common.IMemApiBuff.GetAuraTimeleft(Common.Define.CharacterAgent,System.UInt32,System.Boolean)">
             <summary>
@@ -695,6 +719,12 @@
             </summary>
             <param name="title"></param>
             <param name="message"></param>
+        </member>
+        <member name="M:AEAssist.MemoryApi.IMemApiChatMessage.ColorText(System.Object[])">
+            <summary>
+            打印自定义彩色文本，如：ColorText("哈哈哈",69,"你好",22,"!")
+            </summary>
+            <param name="args">每个参数一段文本，文本参数后面跟int的颜色值参数，不带颜色默认白色</param>
         </member>
     </members>
 </doc>
