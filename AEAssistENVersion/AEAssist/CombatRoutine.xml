@@ -587,7 +587,7 @@
             运行键盘快捷键模块,一般放在update中
             </summary>
         </member>
-        <member name="M:CombatRoutine.View.JobView.JobViewWindow.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object}@,System.Collections.Generic.Dictionary{System.String,System.Object}@,System.Action)">
+        <member name="M:CombatRoutine.View.JobView.JobViewWindow.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object}@,System.Collections.Generic.Dictionary{System.String,System.Object}@,System.Action,System.String)">
             <summary>
             在当前职业循环插件中创建一个gui视图
             </summary>
@@ -721,6 +721,22 @@
         <member name="M:CombatRoutine.View.JobView.MainWindow.ChangeStyleView">
             风格设置控件
         </member>
+        <member name="P:CombatRoutine.View.JobView.QtStyle.MainColor">
+            主颜色
+        </member>
+        <member name="P:CombatRoutine.View.JobView.QtStyle.QtWindowBgAlpha">
+            Qt窗口背景透明度
+        </member>
+        <member name="M:CombatRoutine.View.JobView.QtStyle.SetMainStyle">
+            <summary>
+            初始化主窗口风格
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.View.JobView.QtStyle.EndMainStyle">
+            <summary>
+            注销主窗口风格，绝对不能少
+            </summary>
+        </member>
         <member name="T:CombatRoutine.View.JobView.QtWindow">
             Qt窗口类
         </member>
@@ -811,27 +827,11 @@
         <member name="M:CombatRoutine.View.JobView.QtWindow.QtSettingView">
             用于draw一个更改qt排序显示等设置的视图
         </member>
-        <member name="M:CombatRoutine.View.JobView.QtWindow.QtSwitchButton(System.String,System.Boolean@,System.Numerics.Vector4)">
+        <member name="M:CombatRoutine.View.JobView.QtWindow.QtSwitchButton(System.String,System.Boolean@,CombatRoutine.View.JobView.QtStyle@)">
             重新包装的开关按钮控件，一般用于QT按钮
         </member>
-        <member name="M:CombatRoutine.View.JobView.QtWindow.QtButton(System.String)">
-            重新包装的开关按钮控件，一般用于QT按钮
-        </member>
-        <member name="P:CombatRoutine.View.JobView.Style.MainColor">
-            主颜色
-        </member>
-        <member name="P:CombatRoutine.View.JobView.Style.QtWindowBgAlpha">
-            Qt窗口背景透明度
-        </member>
-        <member name="M:CombatRoutine.View.JobView.Style.SetMainStyle">
-            <summary>
-            初始化主窗口风格
-            </summary>
-        </member>
-        <member name="M:CombatRoutine.View.JobView.Style.EndMainStyle">
-            <summary>
-            注销主窗口风格，绝对不能少
-            </summary>
+        <member name="M:CombatRoutine.View.JobView.QtWindow.QtSwitchButton(System.String,System.Boolean@,System.Numerics.Vector4,CombatRoutine.View.JobView.QtStyle@)">
+            重新包装的开关按钮控件，接受自定义颜色而不是全局颜色
         </member>
         <member name="M:CombatRoutine.View.MeleePosHelper.Draw(CombatRoutine.View.MeleePosHelper.Pos,System.Int32)">
             <summary>
