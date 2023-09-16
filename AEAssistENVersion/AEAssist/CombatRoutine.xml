@@ -333,6 +333,16 @@
             </summary>
             <param name="currTime">从战斗开始到现在的时间,单位毫秒(ms)</param>
         </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnEnterRotation">
+            <summary>
+            切到当前ACR
+            </summary>
+        </member>
+        <member name="M:CombatRoutine.IRotationEventHandler.OnExitRotation">
+            <summary>
+            从当前ACR退出
+            </summary>
+        </member>
         <member name="T:CombatRoutine.IRotationUI">
             <summary>
                 如果想要在框架提供的UI位置上显示你的专属UI,就实现这个接口
