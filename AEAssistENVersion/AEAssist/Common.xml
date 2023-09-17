@@ -124,12 +124,12 @@
         </member>
         <member name="M:Common.IEntry.DrawEntrySetting">
             <summary>
-            在主界面上显示的内容
+            在主界面选中Entry时显示的内容
             </summary>
         </member>
         <member name="M:Common.IEntry.DrawUi">
             <summary>
-            你自己模块的显示内容(需要点击Show按钮才会出来)
+            哪怕切换Entry也会显示的内容.
             </summary>
         </member>
         <member name="M:Common.IEntry.HandleChat(System.Int32,System.String)">
@@ -144,6 +144,17 @@
             多语言重置了
             </summary>
             <param name="language"></param>
+        </member>
+        <member name="M:Common.IEntry.OnEvent(Common.IEntryEvent)">
+            <summary>
+            跨Entry之间的调用  走这个事件
+            </summary>
+            <param name="entryEvent"></param>
+        </member>
+        <member name="M:Common.IEntry.AfterVerified">
+            <summary>
+            验证完毕之后的回调
+            </summary>
         </member>
         <member name="M:Common.GUI.ImGuiHelper.Separator(System.UInt32,System.UInt32)">
             <summary>

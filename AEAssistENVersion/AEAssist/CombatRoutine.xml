@@ -632,19 +632,6 @@
         <member name="M:CombatRoutine.View.JobView.JobViewWindow.SetQtToolTip(System.String)">
             设置上一次add添加的hotkey的toolTip
         </member>
-        <member name="M:CombatRoutine.View.JobView.JobViewWindow.AddsQt_NoActionMove(System.String)">
-            <summary>
-            添加新的技能不位移qt
-            </summary>
-            <param name="name">qt的名称</param>
-        </member>
-        <member name="M:CombatRoutine.View.JobView.JobViewWindow.AddsQt_NoActionMove(System.String,System.String)">
-            <summary>
-            添加新的技能不位移qt
-            </summary>
-            <param name="name">qt的名称</param>
-            <param name="toolTip">鼠标悬停提示</param>
-        </member>
         <member name="M:CombatRoutine.View.JobView.JobViewWindow.DrawQtWindow">
             画一个新的Qt窗口
         </member>
@@ -794,19 +781,6 @@
         </member>
         <member name="M:CombatRoutine.View.JobView.QtWindow.SetQtToolTip(System.String)">
             设置上一次add添加的hotkey的toolTip
-        </member>
-        <member name="M:CombatRoutine.View.JobView.QtWindow.AddsQt_NoActionMove(System.String)">
-            <summary>
-            添加新的技能不位移qt
-            </summary>
-            <param name="name">qt的名称</param>
-        </member>
-        <member name="M:CombatRoutine.View.JobView.QtWindow.AddsQt_NoActionMove(System.String,System.String)">
-            <summary>
-            添加新的技能不位移qt
-            </summary>
-            <param name="name">qt的名称</param>
-            <param name="toolTip">鼠标悬停提示</param>
         </member>
         <member name="M:CombatRoutine.View.JobView.QtWindow.GetQt(System.String)">
             获取指定名称qt的bool值
