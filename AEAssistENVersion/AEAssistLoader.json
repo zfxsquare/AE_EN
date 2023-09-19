@@ -3,7 +3,7 @@
   "Name": "AEAssistLoader",
   "Punchline": "Hello world",
   "Description": "A combat routine for end-game content",
-  "InternalName": "AEAssist",
+  "InternalName": "AEAssistLoader",
   "ApplicableVersion": "any",
   "Tags": [
     "combat",

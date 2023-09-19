@@ -439,12 +439,11 @@
             传送至指定地图
             </summary>
         </member>
-        <member name="M:Common.IMemApiNavigation.MoveToPos(System.Numerics.Vector3,System.Int32)">
+        <member name="M:Common.IMemApiNavigation.MoveToPos(System.Numerics.Vector3)">
             <summary>
             角色移动到某个点
             </summary>
             <param name="pos"></param>
-            <param name="timeout">超时默认10秒，如果单次移动点比较远，适当延长时间</param>
         </member>
         <member name="T:Common.IMemApiSpell">
             <summary>
