@@ -166,6 +166,15 @@
         <member name="M:Common.GUI.ImGuiHelper.IsRightMouseClicked">
             右键点击
         </member>
+        <member name="M:Common.GUI.ImGuiHelper.LinkText(System.String,System.String,System.String,System.Nullable{System.Drawing.Color})">
+            <summary>
+            超链接文字
+            </summary>
+            <param name="label">显示文本</param>
+            <param name="link">链接</param>
+            <param name="tooltip">提示文本</param>
+            <param name="color">文本颜色,默认null为imgui文本颜色</param>
+        </member>
         <member name="M:Common.Helper.ChatHelper.SendMessage(System.String)">
             发送宏指令
         </member>
