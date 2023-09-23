@@ -289,6 +289,14 @@
             <param name="index"></param>
             <returns></returns>
         </member>
+        <member name="M:Common.IMemApiAddon.SetAddonValue(System.String,System.UInt32,System.Int32)">
+            <summary>
+            设置控件文本
+            </summary>
+            <param name="addonName"></param>
+            <param name="nodeIndex"></param>
+            <param name="values"></param>
+        </member>
         <member name="M:Common.IMemApiAddon.SetAddonClicked(System.String,System.Object[])">
             <summary>
             点击窗口上的按钮
