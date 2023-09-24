@@ -595,6 +595,16 @@
             是否有宝石兽
             </summary>
         </member>
+        <member name="P:Common.IMemApiSummoner.InBahamut">
+            <summary>
+            龙神附体状态
+            </summary>
+        </member>
+        <member name="P:Common.IMemApiSummoner.InPhoenix">
+            <summary>
+            不死鸟附体状态
+            </summary>
+        </member>
         <member name="M:Common.IMemApiZoneInfo.InDeepDungeon">
             <summary>
             是否在正统优雷卡

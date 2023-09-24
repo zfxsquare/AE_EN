@@ -47,7 +47,12 @@
         </member>
         <member name="P:CombatRoutine.BattleData.LimitAbility">
             <summary>
-            限制后就只能使用1个了
+            限制后只能单插
+            </summary>
+        </member>
+        <member name="P:CombatRoutine.BattleData.Limit2Ability">
+            <summary>
+            限制后只能双插
             </summary>
         </member>
         <member name="M:CombatRoutine.BattleData.SetSequence(CombatRoutine.ISlotSequence)">
